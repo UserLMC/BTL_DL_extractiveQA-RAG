@@ -1,7 +1,0 @@
-.venv/
-__pycache__/
-*.pyc
-.pytest_cache/
-data/processed/
-vncorenlp/
-.ipynb_checkpoints/

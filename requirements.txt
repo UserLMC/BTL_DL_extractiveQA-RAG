@@ -1,8 +1,1 @@
-transformers>=4.40
-datasets>=2.18
-sentencepiece
-protobuf
-torch
-pytest
-# Tuỳ chọn: tách từ cho PhoBERT (cần cài Java)
-# py_vncorenlp
+

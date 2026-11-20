@@ -1,0 +1,2243 @@
+{
+ "overall": {
+  "R@1": 0.5897435897435898,
+  "R@3": 0.7564102564102564,
+  "R@5": 0.782051282051282,
+  "R@10": 0.8974358974358975,
+  "MRR@10": 0.7323361823361823,
+  "n": 39
+ },
+ "by_type": {
+  "condition": {
+   "R@1": 0.8888888888888888,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 0.9259259259259258,
+   "n": 9
+  },
+  "fact": {
+   "R@1": 0.3,
+   "R@3": 0.5,
+   "R@5": 0.5,
+   "R@10": 0.7,
+   "MRR@10": 0.42361111111111105,
+   "n": 10
+  },
+  "multi": {
+   "R@1": 0.4,
+   "R@3": 0.7,
+   "R@5": 0.7,
+   "R@10": 0.8,
+   "MRR@10": 0.9,
+   "n": 5
+  },
+  "number": {
+   "R@1": 0.6666666666666666,
+   "R@3": 0.8,
+   "R@5": 0.8666666666666667,
+   "R@10": 1.0,
+   "MRR@10": 0.7661111111111112,
+   "n": 15
+  }
+ },
+ "per_question": [
+  {
+   "id": "tv2_001",
+   "type": "fact",
+   "question": "Học bổng khuyến khích học tập ở Trường Đại học Công nghệ lấy tiền từ nguồn nào?",
+   "gold": [
+    "uet_1931__p0_d2_0"
+   ],
+   "top": [
+    {
+     "id": "uet_1931__p0_d6_0",
+     "score": 0.8928
+    },
+    {
+     "id": "uet_1931__p0_d2_0",
+     "score": 0.891
+    },
+    {
+     "id": "uet_1931__p0_pre_0",
+     "score": 0.8802
+    },
+    {
+     "id": "uet_1931__p0_d3_0",
+     "score": 0.878
+    },
+    {
+     "id": "uet_1931__p0_d5_1",
+     "score": 0.8772
+    },
+    {
+     "id": "uet_1931__p0_d5_0",
+     "score": 0.8744
+    },
+    {
+     "id": "uet_1931__p0_d4_0",
+     "score": 0.8736
+    },
+    {
+     "id": "uet_1931__p0_d1_0",
+     "score": 0.873
+    },
+    {
+     "id": "uet_1931__p0_d7_0",
+     "score": 0.871
+    },
+    {
+     "id": "uet_1931__p0_d8_0",
+     "score": 0.8654
+    }
+   ],
+   "first_hit": 2,
+   "R@1": 0.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 0.5
+  },
+  {
+   "id": "tv2_002",
+   "type": "fact",
+   "question": "Thế nào là học phần tiên quyết?",
+   "gold": [
+    "vnu_3626__p1_d5_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.827
+    },
+    {
+     "id": "vnu_3626__p1_d38_0",
+     "score": 0.807
+    },
+    {
+     "id": "vnu_3626__p1_d37_0",
+     "score": 0.8057
+    },
+    {
+     "id": "vnu_3626__p1_d20_0",
+     "score": 0.805
+    },
+    {
+     "id": "vnu_3626__p1_d5_1",
+     "score": 0.8049
+    },
+    {
+     "id": "vnu_3626__p1_d21_0",
+     "score": 0.8049
+    },
+    {
+     "id": "vnu_3626__p1_d38_2",
+     "score": 0.8036
+    },
+    {
+     "id": "vnu_1011__p0_m1_2",
+     "score": 0.8011
+    },
+    {
+     "id": "vnu_3626__p1_d20_1",
+     "score": 0.8002
+    },
+    {
+     "id": "vnu_3626__p1_d37_1",
+     "score": 0.799
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_003",
+   "type": "fact",
+   "question": "Các môn lý luận chính trị do trường nào của ĐHQGHN đứng lớp?",
+   "gold": [
+    "vnu_3626__p1_d2_0",
+    "vnu_3626__p1_d2_1"
+   ],
+   "top": [
+    {
+     "id": "vnu_32__p1_pl0_4",
+     "score": 0.83
+    },
+    {
+     "id": "vnu_32__p1_d8_0",
+     "score": 0.8278
+    },
+    {
+     "id": "vnu_32__p1_d4_1",
+     "score": 0.8247
+    },
+    {
+     "id": "vnu_32__p1_d4_0",
+     "score": 0.8205
+    },
+    {
+     "id": "vnu_32__p1_pl0_2",
+     "score": 0.8195
+    },
+    {
+     "id": "vnu_32__p1_pl0_5",
+     "score": 0.8195
+    },
+    {
+     "id": "vnu_32__p1_d37_0",
+     "score": 0.8191
+    },
+    {
+     "id": "vnu_32__p1_d14_3",
+     "score": 0.8189
+    },
+    {
+     "id": "vnu_32__p1_pl0_0",
+     "score": 0.8177
+    },
+    {
+     "id": "vnu_32__p1_d24_1",
+     "score": 0.8168
+    }
+   ],
+   "first_hit": null,
+   "R@1": 0.0,
+   "R@3": 0.0,
+   "R@5": 0.0,
+   "R@10": 0.0,
+   "MRR@10": 0.0
+  },
+  {
+   "id": "tv2_004",
+   "type": "fact",
+   "question": "Điểm các môn thể dục, quốc phòng có bị tính vào điểm trung bình học kỳ không?",
+   "gold": [
+    "vnu_3626__p1_d5_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d43_0",
+     "score": 0.8626
+    },
+    {
+     "id": "vnu_3626__p1_d41_1",
+     "score": 0.8452
+    },
+    {
+     "id": "vnu_3626__p1_d41_0",
+     "score": 0.8444
+    },
+    {
+     "id": "vnu_32__p1_d23_0",
+     "score": 0.8434
+    },
+    {
+     "id": "vnu_32__p1_d25_0",
+     "score": 0.842
+    },
+    {
+     "id": "vnu_32__p1_d24_0",
+     "score": 0.8414
+    },
+    {
+     "id": "vnu_3626__p1_d43_1",
+     "score": 0.8406
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.8404
+    },
+    {
+     "id": "vnu_3626__p1_d37_0",
+     "score": 0.8394
+    },
+    {
+     "id": "vnu_3626__p1_d44_0",
+     "score": 0.8361
+    }
+   ],
+   "first_hit": 8,
+   "R@1": 0.0,
+   "R@3": 0.0,
+   "R@5": 0.0,
+   "R@10": 1.0,
+   "MRR@10": 0.125
+  },
+  {
+   "id": "tv2_005",
+   "type": "fact",
+   "question": "Trượt một môn bắt buộc (bị điểm F) thì sinh viên phải làm gì?",
+   "gold": [
+    "vnu_3626__p1_d21_2"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d41_1",
+     "score": 0.8459
+    },
+    {
+     "id": "vnu_3626__p1_d35_0",
+     "score": 0.835
+    },
+    {
+     "id": "vnu_3626__p1_d23_0",
+     "score": 0.8324
+    },
+    {
+     "id": "vnu_3626__p1_d44_0",
+     "score": 0.8281
+    },
+    {
+     "id": "vnu_3626__p1_d41_2",
+     "score": 0.8274
+    },
+    {
+     "id": "vnu_3626__p1_d35_2",
+     "score": 0.8262
+    },
+    {
+     "id": "vnu_3626__p1_d35_1",
+     "score": 0.8261
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.8247
+    },
+    {
+     "id": "vnu_3626__p1_d39_0",
+     "score": 0.8247
+    },
+    {
+     "id": "vnu_32__p1_pl0_1",
+     "score": 0.8237
+    }
+   ],
+   "first_hit": null,
+   "R@1": 0.0,
+   "R@3": 0.0,
+   "R@5": 0.0,
+   "R@10": 0.0,
+   "MRR@10": 0.0
+  },
+  {
+   "id": "tv2_006",
+   "type": "fact",
+   "question": "Môn tự chọn tự do có được tính vào điểm trung bình tích lũy không?",
+   "gold": [
+    "vnu_3626__p1_d21_1"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d43_0",
+     "score": 0.8241
+    },
+    {
+     "id": "vnu_3626__p1_d21_1",
+     "score": 0.8233
+    },
+    {
+     "id": "vnu_3626__p1_d42_0",
+     "score": 0.8231
+    },
+    {
+     "id": "vnu_3626__p1_d27_3",
+     "score": 0.8192
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.8168
+    },
+    {
+     "id": "vnu_3626__p1_d41_0",
+     "score": 0.8156
+    },
+    {
+     "id": "vnu_32__p1_d25_0",
+     "score": 0.8146
+    },
+    {
+     "id": "vnu_3626__p1_d43_1",
+     "score": 0.8135
+    },
+    {
+     "id": "uet_1931__p0_d5_0",
+     "score": 0.8117
+    },
+    {
+     "id": "vnu_3626__p1_d38_2",
+     "score": 0.811
+    }
+   ],
+   "first_hit": 2,
+   "R@1": 0.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 0.5
+  },
+  {
+   "id": "tv2_007",
+   "type": "fact",
+   "question": "Trường nào phụ trách dạy các học phần ngoại ngữ chung cho sinh viên ĐHQGHN?",
+   "gold": [
+    "vnu_1011__p0_m1_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_1011__p0_m1_0",
+     "score": 0.8806
+    },
+    {
+     "id": "vnu_1011__p0_m4_0",
+     "score": 0.8696
+    },
+    {
+     "id": "vnu_1011__p0_m5_0",
+     "score": 0.8629
+    },
+    {
+     "id": "vnu_1011__p0_m2_1",
+     "score": 0.8581
+    },
+    {
+     "id": "vnu_1011__p0_pre_0",
+     "score": 0.8537
+    },
+    {
+     "id": "vnu_1011__p0_m2_0",
+     "score": 0.8522
+    },
+    {
+     "id": "vnu_1011__p0_m2_2",
+     "score": 0.8509
+    },
+    {
+     "id": "vnu_32__p1_d8_0",
+     "score": 0.8456
+    },
+    {
+     "id": "vnu_3626__p1_d2_0",
+     "score": 0.8453
+    },
+    {
+     "id": "vnu_32__p1_d37_0",
+     "score": 0.845
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_008",
+   "type": "fact",
+   "question": "Bài kiểm tra xếp lớp tiếng Anh đầu năm được thi theo hình thức gì?",
+   "gold": [
+    "vnu_1011__p0_m2_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_1011__p0_pl3_0",
+     "score": 0.8225
+    },
+    {
+     "id": "vnu_1011__p0_pl3_1",
+     "score": 0.8178
+    },
+    {
+     "id": "vnu_1011__p0_pl3_3",
+     "score": 0.8113
+    },
+    {
+     "id": "vnu_3626__p1_d41_1",
+     "score": 0.8066
+    },
+    {
+     "id": "vnu_1011__p0_pl3_2",
+     "score": 0.8063
+    },
+    {
+     "id": "vnu_1011__p0_pl1_1",
+     "score": 0.8026
+    },
+    {
+     "id": "vnu_3626__p1_d41_0",
+     "score": 0.8016
+    },
+    {
+     "id": "vnu_1011__p0_pl1_0",
+     "score": 0.801
+    },
+    {
+     "id": "vnu_1011__p0_m2_0",
+     "score": 0.7989
+    },
+    {
+     "id": "vnu_3626__p1_d5_1",
+     "score": 0.7985
+    }
+   ],
+   "first_hit": 9,
+   "R@1": 0.0,
+   "R@3": 0.0,
+   "R@5": 0.0,
+   "R@10": 1.0,
+   "MRR@10": 0.1111111111111111
+  },
+  {
+   "id": "tv2_009",
+   "type": "fact",
+   "question": "Ai duyệt đề cương học phần trước khi giảng dạy?",
+   "gold": [
+    "vnu_3626__p1_d5_1"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d5_1",
+     "score": 0.8339
+    },
+    {
+     "id": "vnu_1011__p0_m2_0",
+     "score": 0.8198
+    },
+    {
+     "id": "vnu_3626__p1_d21_3",
+     "score": 0.8187
+    },
+    {
+     "id": "vnu_3626__p1_d20_0",
+     "score": 0.8173
+    },
+    {
+     "id": "vnu_3626__p1_d38_1",
+     "score": 0.817
+    },
+    {
+     "id": "vnu_3626__p1_d33_0",
+     "score": 0.8165
+    },
+    {
+     "id": "vnu_3626__p1_d5_2",
+     "score": 0.8144
+    },
+    {
+     "id": "vnu_3626__p1_d21_1",
+     "score": 0.814
+    },
+    {
+     "id": "vnu_3626__p1_d38_0",
+     "score": 0.8135
+    },
+    {
+     "id": "vnu_1011__p0_m2_2",
+     "score": 0.8101
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_010",
+   "type": "fact",
+   "question": "Sinh viên chuyển trường về ĐHQGHN có phải học lại giáo dục quốc phòng và thể chất không?",
+   "gold": [
+    "vnu_3626__p1_d29_1"
+   ],
+   "top": [
+    {
+     "id": "vnu_32__p1_d4_0",
+     "score": 0.8643
+    },
+    {
+     "id": "vnu_3626__p1_d24_1",
+     "score": 0.8582
+    },
+    {
+     "id": "vnu_32__p1_d5_0",
+     "score": 0.8581
+    },
+    {
+     "id": "vnu_32__p1_d2_0",
+     "score": 0.8557
+    },
+    {
+     "id": "vnu_32__p1_d4_1",
+     "score": 0.8545
+    },
+    {
+     "id": "vnu_32__p1_d3_0",
+     "score": 0.8522
+    },
+    {
+     "id": "vnu_32__p1_d8_0",
+     "score": 0.8519
+    },
+    {
+     "id": "vnu_32__p1_d14_1",
+     "score": 0.8516
+    },
+    {
+     "id": "vnu_32__p1_d37_0",
+     "score": 0.8515
+    },
+    {
+     "id": "vnu_32__p1_d9_0",
+     "score": 0.851
+    }
+   ],
+   "first_hit": null,
+   "R@1": 0.0,
+   "R@3": 0.0,
+   "R@5": 0.0,
+   "R@10": 0.0,
+   "MRR@10": 0.0
+  },
+  {
+   "id": "tv2_011",
+   "type": "number",
+   "question": "Một học kỳ chính có bao nhiêu tuần học?",
+   "gold": [
+    "vnu_3626__p1_d16_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d16_0",
+     "score": 0.8667
+    },
+    {
+     "id": "vnu_3626__p1_d19_0",
+     "score": 0.8288
+    },
+    {
+     "id": "vnu_3626__p1_d38_0",
+     "score": 0.8288
+    },
+    {
+     "id": "vnu_3626__p1_d17_0",
+     "score": 0.8249
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.819
+    },
+    {
+     "id": "vnu_3626__p1_d38_1",
+     "score": 0.8161
+    },
+    {
+     "id": "vnu_3626__p1_d4_0",
+     "score": 0.8137
+    },
+    {
+     "id": "vnu_3626__p1_d44_0",
+     "score": 0.8113
+    },
+    {
+     "id": "vnu_3626__p1_d36_0",
+     "score": 0.8074
+    },
+    {
+     "id": "vnu_3626__p1_d21_1",
+     "score": 0.8052
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_012",
+   "type": "number",
+   "question": "Học kỳ hè kéo dài ít nhất mấy tuần?",
+   "gold": [
+    "vnu_3626__p1_d16_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d16_0",
+     "score": 0.8479
+    },
+    {
+     "id": "vnu_3626__p1_d38_0",
+     "score": 0.8334
+    },
+    {
+     "id": "vnu_3626__p1_d38_1",
+     "score": 0.8332
+    },
+    {
+     "id": "vnu_3626__p1_d19_0",
+     "score": 0.8258
+    },
+    {
+     "id": "vnu_3626__p1_d4_0",
+     "score": 0.8245
+    },
+    {
+     "id": "vnu_3626__p1_d36_0",
+     "score": 0.8244
+    },
+    {
+     "id": "vnu_3626__p1_d17_0",
+     "score": 0.824
+    },
+    {
+     "id": "vnu_32__p1_pl0_0",
+     "score": 0.822
+    },
+    {
+     "id": "vnu_32__p1_d21_0",
+     "score": 0.8215
+    },
+    {
+     "id": "vnu_32__p1_d14_0",
+     "score": 0.8211
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_013",
+   "type": "number",
+   "question": "Một tiết học dài bao nhiêu phút?",
+   "gold": [
+    "vnu_3626__p1_d19_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d4_0",
+     "score": 0.8415
+    },
+    {
+     "id": "vnu_3626__p1_d19_0",
+     "score": 0.8405
+    },
+    {
+     "id": "vnu_3626__p1_d16_0",
+     "score": 0.8171
+    },
+    {
+     "id": "vnu_3626__p1_d38_1",
+     "score": 0.8129
+    },
+    {
+     "id": "vnu_3626__p1_d27_1",
+     "score": 0.8127
+    },
+    {
+     "id": "vnu_3626__p1_d38_0",
+     "score": 0.8108
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.8106
+    },
+    {
+     "id": "vnu_3626__p1_d17_0",
+     "score": 0.8104
+    },
+    {
+     "id": "vnu_1011__p0_pl3_0",
+     "score": 0.8083
+    },
+    {
+     "id": "vnu_1011__p0_pl3_1",
+     "score": 0.8057
+    }
+   ],
+   "first_hit": 2,
+   "R@1": 0.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 0.5
+  },
+  {
+   "id": "tv2_014",
+   "type": "number",
+   "question": "Học cử nhân chính quy được thiết kế trong mấy học kỳ chính?",
+   "gold": [
+    "vnu_3626__p1_d17_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d17_0",
+     "score": 0.8323
+    },
+    {
+     "id": "vnu_3626__p1_d16_0",
+     "score": 0.8165
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.8014
+    },
+    {
+     "id": "vnu_3626__p1_d27_3",
+     "score": 0.7987
+    },
+    {
+     "id": "vnu_3626__p1_d21_0",
+     "score": 0.7948
+    },
+    {
+     "id": "vnu_3626__p1_d38_0",
+     "score": 0.7945
+    },
+    {
+     "id": "vnu_32__p1_pl0_0",
+     "score": 0.7945
+    },
+    {
+     "id": "vnu_3626__p1_d38_1",
+     "score": 0.7935
+    },
+    {
+     "id": "vnu_3626__p1_d7_0",
+     "score": 0.7935
+    },
+    {
+     "id": "vnu_3626__p1_d38_2",
+     "score": 0.7922
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_015",
+   "type": "number",
+   "question": "Sinh viên được kéo dài thời gian học tối đa bao lâu?",
+   "gold": [
+    "vnu_3626__p1_d17_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d17_0",
+     "score": 0.8525
+    },
+    {
+     "id": "vnu_3626__p1_d36_0",
+     "score": 0.8474
+    },
+    {
+     "id": "vnu_3626__p1_d36_1",
+     "score": 0.8428
+    },
+    {
+     "id": "vnu_3626__p1_d26_1",
+     "score": 0.8335
+    },
+    {
+     "id": "vnu_32__p1_d14_0",
+     "score": 0.8333
+    },
+    {
+     "id": "vnu_3626__p1_d35_2",
+     "score": 0.8327
+    },
+    {
+     "id": "vnu_3626__p1_d44_1",
+     "score": 0.8327
+    },
+    {
+     "id": "vnu_3626__p1_d33_1",
+     "score": 0.8323
+    },
+    {
+     "id": "vnu_3626__p1_d38_1",
+     "score": 0.8317
+    },
+    {
+     "id": "vnu_32__p1_d31_0",
+     "score": 0.8316
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_016",
+   "type": "number",
+   "question": "Khóa luận tốt nghiệp nặng bao nhiêu tín chỉ?",
+   "gold": [
+    "vnu_3626__p1_d5_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d39_0",
+     "score": 0.854
+    },
+    {
+     "id": "vnu_3626__p1_d39_1",
+     "score": 0.8514
+    },
+    {
+     "id": "vnu_3626__p1_d4_0",
+     "score": 0.8451
+    },
+    {
+     "id": "vnu_3626__p1_d47_1",
+     "score": 0.8449
+    },
+    {
+     "id": "vnu_3626__p1_d21_3",
+     "score": 0.8437
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.841
+    },
+    {
+     "id": "vnu_3626__p1_d47_0",
+     "score": 0.8356
+    },
+    {
+     "id": "vnu_3626__p1_d46_0",
+     "score": 0.8354
+    },
+    {
+     "id": "vnu_3626__p1_d22_1",
+     "score": 0.8351
+    },
+    {
+     "id": "vnu_3626__p1_d47_2",
+     "score": 0.8326
+    }
+   ],
+   "first_hit": 6,
+   "R@1": 0.0,
+   "R@3": 0.0,
+   "R@5": 0.0,
+   "R@10": 1.0,
+   "MRR@10": 0.16666666666666666
+  },
+  {
+   "id": "tv2_017",
+   "type": "number",
+   "question": "Mỗi học phần thường có bao nhiêu tín chỉ?",
+   "gold": [
+    "vnu_3626__p1_d5_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.8335
+    },
+    {
+     "id": "vnu_3626__p1_d43_0",
+     "score": 0.8253
+    },
+    {
+     "id": "vnu_3626__p1_d41_0",
+     "score": 0.8235
+    },
+    {
+     "id": "vnu_3626__p1_d4_0",
+     "score": 0.8219
+    },
+    {
+     "id": "vnu_3626__p1_d21_0",
+     "score": 0.8205
+    },
+    {
+     "id": "vnu_3626__p1_d42_0",
+     "score": 0.8166
+    },
+    {
+     "id": "vnu_3626__p1_d44_0",
+     "score": 0.8153
+    },
+    {
+     "id": "vnu_3626__p1_d23_0",
+     "score": 0.8137
+    },
+    {
+     "id": "vnu_3626__p1_d17_1",
+     "score": 0.8122
+    },
+    {
+     "id": "vnu_1011__p0_m1_0",
+     "score": 0.8108
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_018",
+   "type": "number",
+   "question": "Lớp tiếng Anh bậc đại học cần tối thiểu bao nhiêu sinh viên mới mở và tối đa bao nhiêu?",
+   "gold": [
+    "vnu_1011__p0_m2_1"
+   ],
+   "top": [
+    {
+     "id": "vnu_1011__p0_m2_1",
+     "score": 0.8294
+    },
+    {
+     "id": "vnu_1011__p0_pl3_0",
+     "score": 0.8284
+    },
+    {
+     "id": "vnu_1011__p0_pre_0",
+     "score": 0.8254
+    },
+    {
+     "id": "vnu_1011__p0_pl2_0",
+     "score": 0.8254
+    },
+    {
+     "id": "vnu_1011__p0_pl1_0",
+     "score": 0.8254
+    },
+    {
+     "id": "vnu_3626__p1_d29_1",
+     "score": 0.8243
+    },
+    {
+     "id": "vnu_3626__p1_d39_1",
+     "score": 0.8227
+    },
+    {
+     "id": "vnu_1011__p0_pl3_1",
+     "score": 0.8216
+    },
+    {
+     "id": "vnu_1011__p0_pl3_2",
+     "score": 0.8213
+    },
+    {
+     "id": "vnu_1011__p0_pl3_3",
+     "score": 0.8211
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_019",
+   "type": "number",
+   "question": "Học bổng khuyến khích học tập được phát mấy tháng trong một năm học?",
+   "gold": [
+    "uet_1931__p0_d7_0"
+   ],
+   "top": [
+    {
+     "id": "uet_1931__p0_d2_0",
+     "score": 0.8628
+    },
+    {
+     "id": "uet_1931__p0_d5_0",
+     "score": 0.8586
+    },
+    {
+     "id": "uet_1931__p0_d6_0",
+     "score": 0.8578
+    },
+    {
+     "id": "uet_1931__p0_d5_1",
+     "score": 0.8553
+    },
+    {
+     "id": "uet_1931__p0_d7_0",
+     "score": 0.8496
+    },
+    {
+     "id": "uet_1931__p0_pre_0",
+     "score": 0.845
+    },
+    {
+     "id": "uet_1931__p0_d9_0",
+     "score": 0.8437
+    },
+    {
+     "id": "uet_1931__p0_d4_0",
+     "score": 0.8404
+    },
+    {
+     "id": "uet_1931__p0_d1_0",
+     "score": 0.8399
+    },
+    {
+     "id": "uet_1931__p0_d8_0",
+     "score": 0.8334
+    }
+   ],
+   "first_hit": 5,
+   "R@1": 0.0,
+   "R@3": 0.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 0.2
+  },
+  {
+   "id": "tv2_020",
+   "type": "number",
+   "question": "Muốn được xét học bổng khuyến khích thì học kỳ đó phải hoàn thành ít nhất bao nhiêu tín chỉ?",
+   "gold": [
+    "uet_1931__p0_d7_0"
+   ],
+   "top": [
+    {
+     "id": "uet_1931__p0_d7_0",
+     "score": 0.8769
+    },
+    {
+     "id": "uet_1931__p0_d5_0",
+     "score": 0.8666
+    },
+    {
+     "id": "uet_1931__p0_d5_1",
+     "score": 0.8654
+    },
+    {
+     "id": "uet_1931__p0_d8_0",
+     "score": 0.8609
+    },
+    {
+     "id": "uet_1931__p0_d2_0",
+     "score": 0.8534
+    },
+    {
+     "id": "uet_1931__p0_d4_0",
+     "score": 0.8531
+    },
+    {
+     "id": "uet_1931__p0_d6_0",
+     "score": 0.8508
+    },
+    {
+     "id": "uet_1931__p0_d10_0",
+     "score": 0.8478
+    },
+    {
+     "id": "uet_1931__p0_d1_0",
+     "score": 0.8464
+    },
+    {
+     "id": "uet_1931__p0_d9_0",
+     "score": 0.8457
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_021",
+   "type": "number",
+   "question": "Quỹ học bổng khuyến khích học tập tối thiểu bằng bao nhiêu phần trăm học phí thu được?",
+   "gold": [
+    "uet_1931__p0_d6_0"
+   ],
+   "top": [
+    {
+     "id": "uet_1931__p0_d6_0",
+     "score": 0.8768
+    },
+    {
+     "id": "uet_1931__p0_d5_0",
+     "score": 0.8615
+    },
+    {
+     "id": "uet_1931__p0_d7_0",
+     "score": 0.86
+    },
+    {
+     "id": "uet_1931__p0_d2_0",
+     "score": 0.858
+    },
+    {
+     "id": "uet_1931__p0_d5_1",
+     "score": 0.853
+    },
+    {
+     "id": "uet_1931__p0_d8_0",
+     "score": 0.8451
+    },
+    {
+     "id": "uet_1931__p0_pre_0",
+     "score": 0.843
+    },
+    {
+     "id": "uet_1931__p0_d4_0",
+     "score": 0.8379
+    },
+    {
+     "id": "uet_1931__p0_d1_0",
+     "score": 0.8364
+    },
+    {
+     "id": "uet_1931__p0_d9_0",
+     "score": 0.8334
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_022",
+   "type": "number",
+   "question": "Nộp chứng chỉ ngoại ngữ bậc 3 ngay khi nhập học thì môn ngoại ngữ được quy đổi thành mấy điểm?",
+   "gold": [
+    "vnu_1011__p0_m1_1"
+   ],
+   "top": [
+    {
+     "id": "vnu_1011__p0_m1_1",
+     "score": 0.8652
+    },
+    {
+     "id": "vnu_1011__p0_pl1_1",
+     "score": 0.8584
+    },
+    {
+     "id": "vnu_3626__p1_d29_1",
+     "score": 0.8476
+    },
+    {
+     "id": "vnu_1011__p0_m1_0",
+     "score": 0.8448
+    },
+    {
+     "id": "vnu_1011__p0_m3_0",
+     "score": 0.844
+    },
+    {
+     "id": "vnu_1011__p0_pl1_0",
+     "score": 0.8436
+    },
+    {
+     "id": "vnu_1011__p0_pl3_3",
+     "score": 0.8422
+    },
+    {
+     "id": "vnu_1011__p0_m1_2",
+     "score": 0.8417
+    },
+    {
+     "id": "vnu_1011__p0_pl4_0",
+     "score": 0.8369
+    },
+    {
+     "id": "vnu_1011__p0_pl2_0",
+     "score": 0.8364
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_023",
+   "type": "number",
+   "question": "Chương trình đào tạo được phép dạy online tối đa bao nhiêu phần trăm?",
+   "gold": [
+    "vnu_3626__p1_d20_1",
+    "vnu_3626__p1_d20_2"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d20_1",
+     "score": 0.8544
+    },
+    {
+     "id": "vnu_3626__p1_d20_2",
+     "score": 0.8541
+    },
+    {
+     "id": "vnu_3626__p1_d7_0",
+     "score": 0.8355
+    },
+    {
+     "id": "vnu_3626__p1_d14_0",
+     "score": 0.835
+    },
+    {
+     "id": "vnu_3626__p1_d14_1",
+     "score": 0.8339
+    },
+    {
+     "id": "vnu_3626__p1_d17_0",
+     "score": 0.8336
+    },
+    {
+     "id": "vnu_3626__p1_d10_0",
+     "score": 0.8303
+    },
+    {
+     "id": "vnu_3626__p1_d17_1",
+     "score": 0.8297
+    },
+    {
+     "id": "vnu_3626__p1_d27_1",
+     "score": 0.8292
+    },
+    {
+     "id": "uet_1931__p0_d6_0",
+     "score": 0.8283
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_024",
+   "type": "number",
+   "question": "Đi trao đổi ở trường ngoài ĐHQGHN thì được công nhận tối đa bao nhiêu tín chỉ?",
+   "gold": [
+    "vnu_3626__p1_d22_1"
+   ],
+   "top": [
+    {
+     "id": "vnu_1011__p0_m1_0",
+     "score": 0.8512
+    },
+    {
+     "id": "vnu_3626__p1_d22_1",
+     "score": 0.8477
+    },
+    {
+     "id": "vnu_32__p1_d4_1",
+     "score": 0.8431
+    },
+    {
+     "id": "vnu_32__p1_d4_0",
+     "score": 0.8423
+    },
+    {
+     "id": "vnu_32__p1_pl0_0",
+     "score": 0.8421
+    },
+    {
+     "id": "vnu_32__p1_d37_0",
+     "score": 0.8371
+    },
+    {
+     "id": "vnu_3626__p1_d29_1",
+     "score": 0.837
+    },
+    {
+     "id": "vnu_32__p1_d29_1",
+     "score": 0.8369
+    },
+    {
+     "id": "vnu_32__p1_d24_1",
+     "score": 0.8368
+    },
+    {
+     "id": "vnu_3626__p1_d46_0",
+     "score": 0.8368
+    }
+   ],
+   "first_hit": 2,
+   "R@1": 0.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 0.5
+  },
+  {
+   "id": "tv2_025",
+   "type": "number",
+   "question": "Học kỳ trước có điểm trung bình dưới 2,0 thì kỳ sau được đăng ký tối đa bao nhiêu tín chỉ?",
+   "gold": [
+    "vnu_3626__p1_d23_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d21_0",
+     "score": 0.8619
+    },
+    {
+     "id": "vnu_3626__p1_d44_0",
+     "score": 0.8554
+    },
+    {
+     "id": "vnu_3626__p1_d21_2",
+     "score": 0.8545
+    },
+    {
+     "id": "vnu_3626__p1_d21_1",
+     "score": 0.8476
+    },
+    {
+     "id": "vnu_3626__p1_d45_0",
+     "score": 0.8468
+    },
+    {
+     "id": "vnu_3626__p1_d41_0",
+     "score": 0.8467
+    },
+    {
+     "id": "vnu_3626__p1_d46_0",
+     "score": 0.8457
+    },
+    {
+     "id": "vnu_3626__p1_d23_0",
+     "score": 0.8446
+    },
+    {
+     "id": "vnu_3626__p1_d42_0",
+     "score": 0.8438
+    },
+    {
+     "id": "vnu_3626__p1_d47_1",
+     "score": 0.8432
+    }
+   ],
+   "first_hit": 8,
+   "R@1": 0.0,
+   "R@3": 0.0,
+   "R@5": 0.0,
+   "R@10": 1.0,
+   "MRR@10": 0.125
+  },
+  {
+   "id": "tv2_026",
+   "type": "condition",
+   "question": "Muốn rút bớt môn đã đăng ký mà vẫn được trả lại học phí thì phải rút trong thời hạn nào?",
+   "gold": [
+    "vnu_3626__p1_d23_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d23_0",
+     "score": 0.8809
+    },
+    {
+     "id": "vnu_3626__p1_d21_2",
+     "score": 0.8417
+    },
+    {
+     "id": "vnu_32__p1_pl0_1",
+     "score": 0.8402
+    },
+    {
+     "id": "vnu_3626__p1_d44_1",
+     "score": 0.8387
+    },
+    {
+     "id": "vnu_32__p1_pl0_2",
+     "score": 0.8383
+    },
+    {
+     "id": "vnu_32__p1_pl0_0",
+     "score": 0.8358
+    },
+    {
+     "id": "vnu_32__p1_pl0_4",
+     "score": 0.8348
+    },
+    {
+     "id": "vnu_32__p1_pl0_3",
+     "score": 0.8333
+    },
+    {
+     "id": "vnu_3626__p1_d35_1",
+     "score": 0.8323
+    },
+    {
+     "id": "vnu_32__p1_d33_0",
+     "score": 0.8306
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_027",
+   "type": "condition",
+   "question": "Đã lên năm hai thì còn được xin chuyển ngành không?",
+   "gold": [
+    "vnu_3626__p1_d28_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d28_0",
+     "score": 0.8565
+    },
+    {
+     "id": "vnu_3626__p1_d29_0",
+     "score": 0.8379
+    },
+    {
+     "id": "vnu_3626__p1_d29_1",
+     "score": 0.8248
+    },
+    {
+     "id": "vnu_3626__p1_d27_4",
+     "score": 0.8229
+    },
+    {
+     "id": "vnu_3626__p1_d27_3",
+     "score": 0.8223
+    },
+    {
+     "id": "vnu_3626__p1_d26_0",
+     "score": 0.8221
+    },
+    {
+     "id": "vnu_32__p1_d25_1",
+     "score": 0.8184
+    },
+    {
+     "id": "vnu_3626__p1_d26_2",
+     "score": 0.8182
+    },
+    {
+     "id": "vnu_3626__p1_d22_0",
+     "score": 0.8148
+    },
+    {
+     "id": "vnu_3626__p1_d38_2",
+     "score": 0.8146
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_028",
+   "type": "condition",
+   "question": "Đang học song song hai chương trình mà bị cảnh báo học tập ở chương trình thứ nhất thì sao?",
+   "gold": [
+    "vnu_3626__p1_d26_2"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d26_2",
+     "score": 0.857
+    },
+    {
+     "id": "vnu_3626__p1_d26_0",
+     "score": 0.8521
+    },
+    {
+     "id": "vnu_3626__p1_d26_1",
+     "score": 0.8479
+    },
+    {
+     "id": "vnu_3626__p1_d44_0",
+     "score": 0.838
+    },
+    {
+     "id": "vnu_3626__p1_d25_0",
+     "score": 0.8342
+    },
+    {
+     "id": "vnu_3626__p1_d35_1",
+     "score": 0.8315
+    },
+    {
+     "id": "vnu_3626__p1_d28_0",
+     "score": 0.8284
+    },
+    {
+     "id": "vnu_3626__p1_d44_1",
+     "score": 0.8283
+    },
+    {
+     "id": "vnu_3626__p1_d14_1",
+     "score": 0.826
+    },
+    {
+     "id": "vnu_32__p1_d27_0",
+     "score": 0.8257
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_029",
+   "type": "condition",
+   "question": "Những ai được miễn học toàn bộ môn giáo dục quốc phòng an ninh?",
+   "gold": [
+    "vnu_3626__p1_d24_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d24_0",
+     "score": 0.8522
+    },
+    {
+     "id": "vnu_3626__p1_d24_1",
+     "score": 0.8522
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.8337
+    },
+    {
+     "id": "vnu_3626__p1_d29_1",
+     "score": 0.8149
+    },
+    {
+     "id": "vnu_3626__p1_d17_1",
+     "score": 0.8117
+    },
+    {
+     "id": "vnu_3626__p1_d43_0",
+     "score": 0.8097
+    },
+    {
+     "id": "vnu_32__p1_pl0_1",
+     "score": 0.804
+    },
+    {
+     "id": "vnu_3626__p1_d35_1",
+     "score": 0.8022
+    },
+    {
+     "id": "vnu_3626__p1_d36_0",
+     "score": 0.8018
+    },
+    {
+     "id": "vnu_3626__p1_d47_2",
+     "score": 0.8011
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_030",
+   "type": "condition",
+   "question": "Nữ sinh viên đang mang thai có được hoãn học quốc phòng, thể chất không?",
+   "gold": [
+    "vnu_3626__p1_d24_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d24_0",
+     "score": 0.8835
+    },
+    {
+     "id": "vnu_3626__p1_d24_1",
+     "score": 0.8829
+    },
+    {
+     "id": "vnu_3626__p1_d36_0",
+     "score": 0.8392
+    },
+    {
+     "id": "vnu_32__p1_pl0_5",
+     "score": 0.834
+    },
+    {
+     "id": "vnu_32__p1_pl0_4",
+     "score": 0.8332
+    },
+    {
+     "id": "vnu_32__p1_d14_0",
+     "score": 0.831
+    },
+    {
+     "id": "vnu_32__p1_d13_1",
+     "score": 0.8299
+    },
+    {
+     "id": "vnu_32__p1_pl0_2",
+     "score": 0.8291
+    },
+    {
+     "id": "vnu_32__p1_pl0_1",
+     "score": 0.8291
+    },
+    {
+     "id": "vnu_32__p1_d4_0",
+     "score": 0.8284
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_031",
+   "type": "condition",
+   "question": "Học lực xuất sắc nhưng rèn luyện chỉ loại tốt thì được học bổng loại gì?",
+   "gold": [
+    "uet_1931__p0_d8_0"
+   ],
+   "top": [
+    {
+     "id": "uet_1931__p0_d7_0",
+     "score": 0.8592
+    },
+    {
+     "id": "uet_1931__p0_d5_0",
+     "score": 0.8585
+    },
+    {
+     "id": "uet_1931__p0_d8_0",
+     "score": 0.855
+    },
+    {
+     "id": "vnu_32__p1_d25_0",
+     "score": 0.8475
+    },
+    {
+     "id": "uet_1931__p0_d2_0",
+     "score": 0.8448
+    },
+    {
+     "id": "uet_1931__p0_d4_0",
+     "score": 0.843
+    },
+    {
+     "id": "uet_1931__p0_d6_0",
+     "score": 0.8406
+    },
+    {
+     "id": "vnu_32__p1_d27_0",
+     "score": 0.8396
+    },
+    {
+     "id": "uet_1931__p0_d5_1",
+     "score": 0.8387
+    },
+    {
+     "id": "vnu_32__p1_d25_1",
+     "score": 0.8382
+    }
+   ],
+   "first_hit": 3,
+   "R@1": 0.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 0.3333333333333333
+  },
+  {
+   "id": "tv2_032",
+   "type": "condition",
+   "question": "Hai bạn có điểm học tập hệ 4 bằng nhau mà chỉ còn một suất học bổng thì ai được chọn?",
+   "gold": [
+    "uet_1931__p0_d8_0"
+   ],
+   "top": [
+    {
+     "id": "uet_1931__p0_d8_0",
+     "score": 0.8676
+    },
+    {
+     "id": "uet_1931__p0_d7_0",
+     "score": 0.8427
+    },
+    {
+     "id": "uet_1931__p0_d5_0",
+     "score": 0.8407
+    },
+    {
+     "id": "uet_1931__p0_d5_1",
+     "score": 0.8326
+    },
+    {
+     "id": "uet_1931__p0_d4_0",
+     "score": 0.8286
+    },
+    {
+     "id": "vnu_3626__p1_d26_1",
+     "score": 0.824
+    },
+    {
+     "id": "vnu_3626__p1_d26_2",
+     "score": 0.8221
+    },
+    {
+     "id": "uet_1931__p0_d6_0",
+     "score": 0.822
+    },
+    {
+     "id": "vnu_3626__p1_d36_1",
+     "score": 0.8219
+    },
+    {
+     "id": "vnu_3626__p1_d24_0",
+     "score": 0.8201
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_033",
+   "type": "condition",
+   "question": "Bị kỷ luật khiển trách trong học kỳ thì có được xét học bổng khuyến khích không?",
+   "gold": [
+    "uet_1931__p0_d4_0"
+   ],
+   "top": [
+    {
+     "id": "uet_1931__p0_d4_0",
+     "score": 0.8571
+    },
+    {
+     "id": "vnu_32__p1_d31_0",
+     "score": 0.8562
+    },
+    {
+     "id": "uet_1931__p0_d2_0",
+     "score": 0.8521
+    },
+    {
+     "id": "uet_1931__p0_d7_0",
+     "score": 0.8497
+    },
+    {
+     "id": "uet_1931__p0_d5_0",
+     "score": 0.8486
+    },
+    {
+     "id": "vnu_32__p1_d33_0",
+     "score": 0.8482
+    },
+    {
+     "id": "uet_1931__p0_d1_0",
+     "score": 0.848
+    },
+    {
+     "id": "vnu_3626__p1_d35_1",
+     "score": 0.847
+    },
+    {
+     "id": "vnu_32__p1_d32_0",
+     "score": 0.8453
+    },
+    {
+     "id": "vnu_32__p1_pl0_0",
+     "score": 0.8439
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_034",
+   "type": "condition",
+   "question": "Môn bị điểm D+ có được đăng ký học lại để nâng điểm không?",
+   "gold": [
+    "vnu_3626__p1_d21_2"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d21_2",
+     "score": 0.8516
+    },
+    {
+     "id": "vnu_3626__p1_d41_1",
+     "score": 0.8429
+    },
+    {
+     "id": "vnu_3626__p1_d38_2",
+     "score": 0.8408
+    },
+    {
+     "id": "vnu_3626__p1_d23_0",
+     "score": 0.8372
+    },
+    {
+     "id": "vnu_32__p1_d25_1",
+     "score": 0.8315
+    },
+    {
+     "id": "vnu_3626__p1_d27_3",
+     "score": 0.831
+    },
+    {
+     "id": "vnu_3626__p1_d41_2",
+     "score": 0.8278
+    },
+    {
+     "id": "vnu_3626__p1_d35_1",
+     "score": 0.8242
+    },
+    {
+     "id": "vnu_3626__p1_d21_1",
+     "score": 0.8235
+    },
+    {
+     "id": "vnu_32__p1_d25_0",
+     "score": 0.8231
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 1.0,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_035",
+   "type": "multi",
+   "question": "Chương trình chất lượng cao yêu cầu chuẩn đầu ra ngoại ngữ bậc mấy và sinh viên phải tích lũy những học phần ngoại ngữ nào?",
+   "gold": [
+    "vnu_1011__p0_m1_0",
+    "vnu_1011__p0_m1_1",
+    "vnu_3626__p1_d13_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d13_0",
+     "score": 0.8674
+    },
+    {
+     "id": "vnu_1011__p0_m3_1",
+     "score": 0.8631
+    },
+    {
+     "id": "vnu_1011__p0_m1_0",
+     "score": 0.8619
+    },
+    {
+     "id": "vnu_1011__p0_m3_2",
+     "score": 0.8618
+    },
+    {
+     "id": "vnu_1011__p0_m1_1",
+     "score": 0.8597
+    },
+    {
+     "id": "vnu_1011__p0_m1_2",
+     "score": 0.8573
+    },
+    {
+     "id": "vnu_1011__p0_pl1_0",
+     "score": 0.8571
+    },
+    {
+     "id": "vnu_1011__p0_m2_1",
+     "score": 0.8564
+    },
+    {
+     "id": "vnu_3626__p1_d29_1",
+     "score": 0.8517
+    },
+    {
+     "id": "vnu_1011__p0_pre_0",
+     "score": 0.8517
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 0.5,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_036",
+   "type": "multi",
+   "question": "Sinh viên chương trình chuẩn cần đạt chuẩn ngoại ngữ bậc mấy và học phần ngoại ngữ bắt buộc có bao nhiêu tín chỉ?",
+   "gold": [
+    "vnu_1011__p0_m1_0",
+    "vnu_3626__p1_d13_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_1011__p0_m1_0",
+     "score": 0.8836
+    },
+    {
+     "id": "vnu_1011__p0_m1_1",
+     "score": 0.8707
+    },
+    {
+     "id": "vnu_1011__p0_m1_2",
+     "score": 0.8704
+    },
+    {
+     "id": "vnu_3626__p1_d29_1",
+     "score": 0.8693
+    },
+    {
+     "id": "vnu_1011__p0_m3_1",
+     "score": 0.8635
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.8611
+    },
+    {
+     "id": "vnu_1011__p0_pl1_1",
+     "score": 0.86
+    },
+    {
+     "id": "vnu_1011__p0_m3_2",
+     "score": 0.858
+    },
+    {
+     "id": "vnu_1011__p0_m2_1",
+     "score": 0.8567
+    },
+    {
+     "id": "vnu_1011__p0_m3_0",
+     "score": 0.8553
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 0.5,
+   "R@3": 0.5,
+   "R@5": 0.5,
+   "R@10": 0.5,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_037",
+   "type": "multi",
+   "question": "Một năm học có mấy học kỳ, và điểm các môn học kỳ hè được tính vào học kỳ nào khi xét học bổng?",
+   "gold": [
+    "uet_1931__p0_d5_1",
+    "vnu_3626__p1_d16_0"
+   ],
+   "top": [
+    {
+     "id": "uet_1931__p0_d5_1",
+     "score": 0.8659
+    },
+    {
+     "id": "uet_1931__p0_d5_0",
+     "score": 0.8553
+    },
+    {
+     "id": "uet_1931__p0_d7_0",
+     "score": 0.8453
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.8414
+    },
+    {
+     "id": "vnu_3626__p1_d38_1",
+     "score": 0.8393
+    },
+    {
+     "id": "vnu_3626__p1_d43_0",
+     "score": 0.8374
+    },
+    {
+     "id": "uet_1931__p0_d8_0",
+     "score": 0.8358
+    },
+    {
+     "id": "vnu_3626__p1_d16_0",
+     "score": 0.8346
+    },
+    {
+     "id": "vnu_3626__p1_d21_1",
+     "score": 0.8345
+    },
+    {
+     "id": "vnu_3626__p1_d38_0",
+     "score": 0.8342
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 0.5,
+   "R@3": 0.5,
+   "R@5": 0.5,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  },
+  {
+   "id": "tv2_038",
+   "type": "multi",
+   "question": "Điểm môn ngoại ngữ và điểm môn thể dục, quốc phòng có được tính vào điểm trung bình học kỳ không?",
+   "gold": [
+    "vnu_1011__p0_m1_0",
+    "vnu_3626__p1_d5_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d43_0",
+     "score": 0.8641
+    },
+    {
+     "id": "vnu_3626__p1_d5_0",
+     "score": 0.8473
+    },
+    {
+     "id": "vnu_3626__p1_d41_0",
+     "score": 0.8473
+    },
+    {
+     "id": "vnu_32__p1_d24_0",
+     "score": 0.8469
+    },
+    {
+     "id": "vnu_3626__p1_d41_1",
+     "score": 0.8468
+    },
+    {
+     "id": "vnu_3626__p1_d43_1",
+     "score": 0.846
+    },
+    {
+     "id": "vnu_3626__p1_d37_0",
+     "score": 0.8448
+    },
+    {
+     "id": "vnu_32__p1_d23_0",
+     "score": 0.8433
+    },
+    {
+     "id": "vnu_3626__p1_d29_1",
+     "score": 0.8413
+    },
+    {
+     "id": "vnu_3626__p1_d42_0",
+     "score": 0.8399
+    }
+   ],
+   "first_hit": 2,
+   "R@1": 0.0,
+   "R@3": 0.5,
+   "R@5": 0.5,
+   "R@10": 0.5,
+   "MRR@10": 0.5
+  },
+  {
+   "id": "tv2_039",
+   "type": "multi",
+   "question": "Yêu cầu điểm trung bình để chuyển ngành và để đăng ký học thêm chương trình thứ hai khác nhau thế nào?",
+   "gold": [
+    "vnu_3626__p1_d26_0",
+    "vnu_3626__p1_d28_0"
+   ],
+   "top": [
+    {
+     "id": "vnu_3626__p1_d26_0",
+     "score": 0.8558
+    },
+    {
+     "id": "vnu_3626__p1_d28_0",
+     "score": 0.8546
+    },
+    {
+     "id": "vnu_3626__p1_d27_3",
+     "score": 0.8472
+    },
+    {
+     "id": "vnu_3626__p1_d27_4",
+     "score": 0.8414
+    },
+    {
+     "id": "vnu_3626__p1_d25_0",
+     "score": 0.8409
+    },
+    {
+     "id": "vnu_3626__p1_d21_0",
+     "score": 0.8405
+    },
+    {
+     "id": "vnu_3626__p1_d21_2",
+     "score": 0.8391
+    },
+    {
+     "id": "vnu_3626__p1_d26_2",
+     "score": 0.8387
+    },
+    {
+     "id": "vnu_3626__p1_d14_1",
+     "score": 0.8367
+    },
+    {
+     "id": "uet_1931__p0_d8_0",
+     "score": 0.8357
+    }
+   ],
+   "first_hit": 1,
+   "R@1": 0.5,
+   "R@3": 1.0,
+   "R@5": 1.0,
+   "R@10": 1.0,
+   "MRR@10": 1.0
+  }
+ ],
+ "config": {
+  "retriever": "dense_e5-base",
+  "chunks": "data/corpus/chunks.jsonl",
+  "n_chunks": 223
+ }
+}

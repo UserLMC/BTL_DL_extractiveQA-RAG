@@ -2,7 +2,19 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-data/processed/
-vncorenlp/
 .ipynb_checkpoints/
-data/documents/
+
+# Dữ liệu lớn / tải lại được bằng script
+data/pdfs/
+data/cache/
+data/index/
+*.pdf
+!report/*.pdf
+
+# Trọng số mô hình, checkpoint, log W&B
+checkpoints/
+outputs/
+wandb/
+*.safetensors
+*.bin
+*.faiss

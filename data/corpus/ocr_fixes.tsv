@@ -1,0 +1,183 @@
+# Bảng sửa lỗi OCR: phạm_vi<TAB>sai<TAB>đúng   (phạm_vi = doc_id hoặc * cho mọi văn bản OCR)
+# Thay nguyên từ, phân biệt hoa/thường; dạng viết hoa chữ đầu được tự thêm.
+# Danh sách d->đ lấy từ thống kê: từ OCR bắt đầu bằng "d" không xuất hiện trong 4 văn bản
+# có lớp chữ, còn dạng "đ" thì có; đã loại các từ hợp lệ (di, dấu, dọc, dây, so, thai...).
+*	dào	đào
+*	dịnh	định
+*	dơn	đơn
+*	don	đơn
+*	dược	được
+*	diểm	điểm
+*	dăng	đăng
+*	dánh	đánh
+*	dộng	động
+*	diều	điều
+*	dối	đối
+*	dủ	đủ
+*	dồng	đồng
+*	dại	đại
+*	dể	để
+*	dáp	đáp
+*	dổi	đổi
+*	dảm	đảm
+*	dã	đã
+*	dộ	độ
+*	dề	đề
+*	dến	đến
+*	dạt	đạt
+*	dang	đang
+*	tối da	tối đa
+*	dáng	đáng
+*	dồ	đồ
+*	dầu	đầu
+*	dó	đó
+*	dốc	đốc
+*	dạo	đạo
+*	dúng	đúng
+*	dóng	đóng
+*	dầy	đầy
+*	dịa	địa
+*	dều	đều
+*	dặc	đặc
+*	dích	đích
+*	doạn	đoạn
+*	doàn	đoàn
+*	dau	đau
+# lỗi ơ/o, ư/u, h/l
+*	chưong	chương
+*	Chưong	Chương
+*	CHƯONG	CHƯƠNG
+*	tưong	tương
+*	phưong	phương
+*	trinh	trình
+*	trìnl	trình
+*	sinl	sinh
+*	inl	inh
+*	chínl	chính
+*	cua	của
+*	cúa	của
+*	thco	theo
+*	loai	loại
+*	ngoai	ngoại
+*	hoc	học
+*	tao	tạo
+*	quóc	quốc
+*	phai	phải
+*	cáe	các
+*	nẳng	năng
+*	giang	giảng
+*	chon	chọn
+*	khao	khảo
+*	Thông tu	Thông tư
+# đợt 2 (đọc Điều 1-29 của vnu_3626)
+*	tlco	theo
+*	năn	năm
+*	hoach	hoạch
+*	đảm bao	đảm bảo
+*	bao lưu	bảo lưu
+*	tương dương	tương đương
+*	trung binl	trung bình
+*	trung binh	trung bình
+*	họe	học
+*	hon	hơn
+*	chấn thi	chấm thi
+*	quan lý	quản lý
+*	thẩn định	thẩm định
+*	Kinl	Kinh
+*	thực hànl	thực hành
+*	thưong	thương
+*	hỏa hoan	hỏa hoạn
+*	diện tử	điện tử
+*	tố chức	tổ chức
+*	vàđáp	và đáp
+*	s0 với	so với
+*	dội tuyển	đội tuyển
+*	doạt giải	đoạt giải
+*	lrúng	trúng
+*	luyển	tuyển
+*	dự luyển	dự tuyển
+*	nhung	nhưng
+*	lăng cường	tăng cường
+*	lăng lượng	tăng lượng
+*	tu duy	tư duy
+*	Kluyến	Khuyến
+*	vềtrích	về trích
+*	Tựhọc	Tự học
+*	cƠ	cơ
+*	như'	như
+*	thư'	thư
+*	bằng-	bằng
+# OCR đọc "/" thành "l"
+*	giờltuần	giờ/tuần
+*	giờlngày	giờ/ngày
+*	họclđịa	học/địa
+*	TrườnglChủ	Trường/Chủ
+*	tínhlcông	tính/công
+*	thực hànl/bài	thực hành/bài
+# số "7" lạc sau từ
+*	tổng7	tổng
+*	bằng7	bằng
+*	lũy,7	lũy,
+# sửa ngược: "dược" là từ đúng trong "dược sĩ"
+*	được sĩ	dược sĩ
+*	bìnl	bình
+*	dưong	đương
+*	taạo	tạo
+*	khoan 2	khoản 2
+*	ban chính	bản chính
+*	€	e)
+*	Xác định khối	xác định khối
+# đợt 3 (vnu_32)
+*	hoat	hoạt
+*	pham	phạm
+*	dông	động
+*	dình	đình
+*	dua	đua
+*	quy dinh	quy định
+*	dinh	định
+*	chủ trưong	chủ trương
+*	trưong	trường
+*	quyên	quyền
+*	đinh	định
+*	nguôn	nguồn
+*	gôm	gồm
+*	dảng	đảng
+*	duc	dục
+*	chứe	chức
+*	đon	đơn
+*	lac	lạc
+*	chwong	chương
+*	chuong	chương
+*	luât	luật
+*	juật	luật
+*	jớp	lớp
+*	phòngl	phòng
+*	ninl	ninh
+*	vềý	về ý
+*	vềviệc	về việc
+*	trợ7	trợ
+*	dịnl	định
+*	đdịnh	định
+*	xuât	xuất
+*	kêt	kết
+*	chât	chất
+*	chuân	chuẩn
+*	nểu	nếu
+*	vê	về
+*	vể	về
+*	thẳc	thắc
+*	sẳp	sắp
+*	sẳc	sắc
+*	nẳm	nằm
+*	cẳn	cần
+*	dường	đường
+*	tuc	tục
+*	tac	tác
+*	phuc	phục
+*	hinh	hình
+*	nhng	nhưng
+*	TỖ	TỔ
+*	o5tháng	05 tháng
+*	tín chí	tín chỉ
+*	canh báo	cảnh báo
+*	thông báo tra	thông báo trả

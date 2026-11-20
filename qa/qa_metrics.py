@@ -192,26 +192,48 @@ def find_best_null_threshold(
     predictions: Dict[str, str],
     null_score_diff: Dict[str, float],
 ) -> Tuple[float, float]:
-    """
-    Hàm tìm ngưỡng null_threshold tối ưu trên tập Validation để tối đa hóa F1 tổng thể.
-    (Sẽ dùng trực tiếp ở Tuần 2 và vẽ đường cong HasAns/NoAns F1 ở Tuần 3 - E3).
-    """
+    if not null_score_diff:
+        return 0.0, 0.0
+
+    # Tiền tính toán điểm khi giữ nguyên dự đoán span và khi ép về rỗng ""
+    span_f1, null_f1 = {}, {}
+    for sample in val_samples:
+        qid = str(sample["id"])
+        is_impossible = bool(sample.get("is_impossible", False))
+        raw_ans = sample.get("answers", {})
+        if isinstance(raw_ans, dict):
+            gold_answers = [t for t in raw_ans.get("text", []) if normalize_answer(t)]
+        elif isinstance(raw_ans, list):
+            gold_answers = [a["text"] for a in raw_ans if normalize_answer(a.get("text", ""))]
+        else:
+            gold_answers = []
+
+        if is_impossible or len(gold_answers) == 0:
+            gold_answers = []
+
+        pred_text = predictions.get(qid, "")
+        span_f1[qid] = metric_max_over_ground_truths(compute_f1, pred_text, gold_answers)
+        null_f1[qid] = 1.0 if not gold_answers else 0.0
+
+    sorted_diffs = sorted(set(null_score_diff.values()))
+    if len(sorted_diffs) > 200:
+        step = max(1, len(sorted_diffs) // 200)
+        sorted_diffs = sorted_diffs[::step]
+
+    candidate_thresholds = sorted(set([sorted_diffs[0] - 1.0, 0.0] + sorted_diffs))
+
     best_thresh = 0.0
     best_f1 = -1.0
-
-    # Duyệt qua các ngưỡng ứng viên từ phân phối điểm thực tế
-    candidate_thresholds = sorted(set(null_score_diff.values()))
-    # Để chạy nhanh nếu tập val lớn, lấy tối đa 200 điểm chia đều
-    if len(candidate_thresholds) > 200:
-        step = max(1, len(candidate_thresholds) // 200)
-        candidate_thresholds = candidate_thresholds[::step]
+    total = len(val_samples)
 
     for thresh in candidate_thresholds:
-        metrics = evaluate_qa(
-            val_samples, predictions, null_score_diff=null_score_diff, null_threshold=thresh
+        current_f1_sum = sum(
+            null_f1[qid] if null_score_diff.get(qid, -1e9) > thresh else span_f1[qid]
+            for qid in span_f1
         )
-        if metrics["F1"] > best_f1:
-            best_f1 = metrics["F1"]
+        f1_score = round(100.0 * current_f1_sum / total, 2)
+        if f1_score > best_f1:
+            best_f1 = f1_score
             best_thresh = thresh
 
     return best_thresh, best_f1

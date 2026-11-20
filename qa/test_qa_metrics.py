@@ -1,6 +1,6 @@
 import unittest
 import unicodedata
-from eval.qa_metrics import (
+from qa.qa_metrics import (
     normalize_answer,
     compute_exact,
     compute_f1,

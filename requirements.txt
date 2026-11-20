@@ -1,1 +1,16 @@
+# Chung
+numpy>=1.26
+torch>=2.2
+transformers>=4.40
+sentence-transformers>=3.0
+pytest
 
+# RAG – kho tài liệu (TV2)
+PyMuPDF>=1.24
+easyocr>=1.7            # OCR cho văn bản scan (vnu_3626, vnu_32)
+opencv-python-headless>=4.10
+
+# RAG – truy hồi (TV2)
+rank_bm25>=0.2.2
+pyvi>=0.1.1
+faiss-cpu>=1.8

@@ -267,6 +267,8 @@ def run_generation(
     log_every: int = 10,
 ) -> int:
     """Sinh cho mọi (qid, config) chưa có trong out_path. Trả về số dòng mới ghi."""
+    # chunks.jsonl của TV2 dùng khóa "id"; chấp nhận cả "chunk_id".
+    chunks = [{**c, "chunk_id": c.get("chunk_id") or c["id"]} for c in chunks]
     chunk_index = {c["chunk_id"]: c for c in chunks}
     # Không trộn kết quả của 2 mô hình trong cùng một file (vd. đổi 7B -> 3B giữa chừng).
     if os.path.exists(out_path):

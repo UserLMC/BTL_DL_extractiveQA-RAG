@@ -20,11 +20,18 @@ REFUSAL_TEXT = "Không tìm thấy thông tin trong tài liệu"
 
 PROMPT_VERSIONS = ("v1", "v2")
 
-_SYSTEM_BASE = (
-    "Bạn là trợ lý hỏi đáp về quy chế đào tạo và công tác sinh viên của Đại học Quốc gia Hà Nội. "
-    "Trả lời bằng tiếng Việt, ngắn gọn, chính xác: chỉ một câu nêu thẳng đáp án "
-    "(con số, điều kiện, mốc thời gian), không nhắc lại câu hỏi."
-)
+_SYSTEM_INTRO = "Bạn là trợ lý hỏi đáp về quy chế đào tạo và công tác sinh viên của Đại học Quốc gia Hà Nội. "
+
+# Kiểu câu trả lời. "full" (mặc định từ 24/11): một câu hoàn chỉnh, nêu chủ thể rồi đáp án -> gần đáp án chuẩn,
+# NLI/F1 có nghĩa hơn. "short": bản cũ (chạy 22/11) chỉ nêu đáp án trơ trụi, giữ lại để so sánh A/B.
+STYLES = ("full", "short")
+_STYLE_TEXT = {
+    "full": ("Trả lời bằng tiếng Việt, chính xác, bằng MỘT câu hoàn chỉnh: nêu rõ chủ thể của câu hỏi "
+             "rồi đến đáp án (con số, điều kiện, mốc thời gian)."),
+    "short": ("Trả lời bằng tiếng Việt, ngắn gọn, chính xác: chỉ một câu nêu thẳng đáp án "
+              "(con số, điều kiện, mốc thời gian), không nhắc lại câu hỏi."),
+}
+_SYSTEM_BASE = _SYSTEM_INTRO + _STYLE_TEXT["full"]   # giữ tên cũ cho mã/test đang dùng
 
 _RULES_V1 = [
     "Chỉ sử dụng thông tin trong các đoạn ngữ cảnh được cung cấp để trả lời.",
@@ -81,6 +88,7 @@ def build_messages(
     chunks: Optional[List[Dict]] = None,
     version: str = "v2",
     closed_book: bool = False,
+    style: str = "full",
 ) -> List[Dict[str, str]]:
     """
     Trả về list message theo định dạng chat (dùng cho tokenizer.apply_chat_template của Qwen).
@@ -92,6 +100,8 @@ def build_messages(
     """
     if version not in PROMPT_VERSIONS:
         raise ValueError(f"version phải thuộc {PROMPT_VERSIONS}, nhận '{version}'")
+    if style not in STYLES:
+        raise ValueError(f"style phải thuộc {STYLES}, nhận '{style}'")
     question = _nfc(question).strip()
 
     if closed_book:
@@ -102,7 +112,7 @@ def build_messages(
         context = format_context(chunks or [])
         user = f"Ngữ cảnh:\n{context}\n\nCâu hỏi: {question}\nTrả lời:"
 
-    system = _SYSTEM_BASE + "\nQuy tắc:\n" + "\n".join(f"- {r}" for r in rules)
+    system = _SYSTEM_INTRO + _STYLE_TEXT[style] + "\nQuy tắc:\n" + "\n".join(f"- {r}" for r in rules)
     return [{"role": "system", "content": system}, {"role": "user", "content": user}]
 
 

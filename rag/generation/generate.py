@@ -65,6 +65,7 @@ class GenConfig:
     retriever: str        # "none" | "bm25" | "dense" | "oracle"
     k: int
     prompt_version: str   # "v1" | "v2"
+    style: str = "full"   # "full" (câu hoàn chỉnh, từ 24/11) | "short" (bản cũ 22/11)
 
 
 CONFIGS: Dict[str, GenConfig] = {
@@ -75,6 +76,12 @@ CONFIGS: Dict[str, GenConfig] = {
     "S4": GenConfig("S4", "dense", 5, "v2"),
     "S5": GenConfig("S5", "dense", 3, "v1"),
 }
+# Cấu hình phụ cho thử nghiệm prompt (A/B trên ~10 câu, 24/11); KHÔNG thuộc ma trận S0-S6.
+AB_CONFIGS: Dict[str, GenConfig] = {
+    "S1_v1": GenConfig("S1_v1", "bm25", 3, "v1"),                 # prompt v1 (không từ chối/trích dẫn)
+    "S1_short": GenConfig("S1_short", "bm25", 3, "v2", "short"),  # v2 kiểu cũ: đáp án trơ trụi
+}
+ALL_CONFIGS: Dict[str, GenConfig] = {**CONFIGS, **AB_CONFIGS}
 
 
 # ---------------------------------------------------------------------------
@@ -283,14 +290,14 @@ def run_generation(
     samples = test[:limit] if limit else test
     n_new = 0
     for name in config_names:
-        cfg = CONFIGS[name]
+        cfg = ALL_CONFIGS[name]
         for s in samples:
             qid = str(s["qid"])
             if (qid, name) in done:
                 continue
             ctx = select_chunks(cfg, s, chunk_index, retrieval)
             msgs = build_messages(s["question"], ctx, version=cfg.prompt_version,
-                                  closed_book=(cfg.retriever == "none"))
+                                  closed_book=(cfg.retriever == "none"), style=cfg.style)
             t0 = time.time()
             answer, n_tok = backend.generate(msgs)
             gold = set(s.get("gold_chunk_ids") or [])
@@ -377,16 +384,21 @@ def main(argv=None):
     ap.add_argument("--chunks")
     ap.add_argument("--retrieval")
     ap.add_argument("--out", default="outputs/generations.jsonl")
-    ap.add_argument("--configs", nargs="+", default=list(CONFIGS))
+    ap.add_argument("--configs", nargs="+", default=list(CONFIGS), choices=list(ALL_CONFIGS))
     ap.add_argument("--backend", choices=["hf", "mock"], default="hf")
     ap.add_argument("--model", default="Qwen/Qwen2.5-7B-Instruct")
     ap.add_argument("--max-new-tokens", type=int, default=200)
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--qids", nargs="+", help="chỉ chạy/chấm các qid này (vd. thử A/B prompt trên 10 câu)")
     ap.add_argument("--score", metavar="GEN_JSONL", help="chỉ chấm file sinh có sẵn")
     ap.add_argument("--wandb-project", help="nếu đặt, log bảng tóm tắt lên Weights & Biases")
     a = ap.parse_args(argv)
 
     test = read_jsonl(a.test)
+    if a.qids:
+        test = [t for t in test if str(t["qid"]) in set(a.qids)]
+        if not test:
+            raise SystemExit("--qids không khớp câu nào trong --test")
     if a.score:
         res = summarize(read_jsonl(a.score), test)
         print(json.dumps(res, ensure_ascii=False, indent=2))

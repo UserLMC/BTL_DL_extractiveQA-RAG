@@ -5,6 +5,7 @@ import os
 import sys
 from pathlib import Path
 from typing import Dict, List
+from transformers.trainer_utils import get_last_checkpoint
 import math
 
 # Hỗ trợ chạy cả `python -m qa.train` lẫn `python qa/train.py`
@@ -270,7 +271,12 @@ def main():
     # 4. Huấn luyện
     global_step = 0
     if not args.eval_only:
-        train_result = trainer.train()
+        
+        last_ckpt = get_last_checkpoint(args.output_dir) if os.path.isdir(args.output_dir) else None
+        if last_ckpt:
+            print(f"[INFO] Phát hiện checkpoint cũ, tiếp tục train từ: {last_ckpt}")
+        train_result = trainer.train(resume_from_checkpoint=last_ckpt)
+
         global_step = int(train_result.global_step)
         best_model_dir = os.path.join(args.output_dir, "best_model")
         trainer.save_model(best_model_dir)

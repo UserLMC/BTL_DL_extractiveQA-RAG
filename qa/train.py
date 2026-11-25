@@ -5,6 +5,7 @@ import os
 import sys
 from pathlib import Path
 from typing import Dict, List
+import math
 
 # Hỗ trợ chạy cả `python -m qa.train` lẫn `python qa/train.py`
 ROOT_DIR = str(Path(__file__).resolve().parent.parent)
@@ -122,7 +123,7 @@ def log_qa_metrics_to_tensorboard(
         metric_dict["hparam/test_EM"] = float(test_metrics.get("EM", 0.0))
         metric_dict["hparam/test_F1"] = float(test_metrics.get("F1", 0.0))
 
-    writer.add_hparams(hparam_dict, metric_dict)
+    writer.add_hparams(hparam_dict, metric_dict, run_name=".")
     writer.flush()
     writer.close()
 
@@ -216,7 +217,7 @@ def main():
         train_dataset = ViQuADDataset(train_features, is_training=True)
         print(f"[INFO] Số cửa sổ trượt: train={len(train_features)}, val={len(val_features)}")
 
-    # 3. Cấu hình TrainingArguments với TensorBoard (tương thích cả transformers cũ & mới)
+    # 3. Cấu hình TrainingArguments với TensorBoard (tương thích cả transformers <5.15 & >=5.15)
     os.environ["TENSORBOARD_LOGGING_DIR"] = tb_run_dir
     ta_kwargs = dict(
         output_dir=args.output_dir,
@@ -226,7 +227,6 @@ def main():
         per_device_eval_batch_size=args.batch_size * 2,
         gradient_accumulation_steps=args.grad_accum,
         weight_decay=args.weight_decay,
-        warmup_ratio=args.warmup_ratio,
         fp16=torch.cuda.is_available(),
         save_strategy="epoch",
         load_best_model_at_end=True,
@@ -241,13 +241,22 @@ def main():
         dataloader_num_workers=2 if torch.cuda.is_available() else 0,
         seed=args.seed,
     )
+
     ta_params = inspect.signature(TrainingArguments.__init__).parameters
     if "eval_strategy" in ta_params:
         ta_kwargs["eval_strategy"] = "epoch"
     else:
         ta_kwargs["evaluation_strategy"] = "epoch"
+
     if "logging_dir" in ta_params:
         ta_kwargs["logging_dir"] = tb_run_dir
+
+    if "warmup_ratio" in ta_params:
+        ta_kwargs["warmup_ratio"] = args.warmup_ratio
+    elif train_dataset is not None and args.warmup_ratio > 0:
+        eff_bs = args.batch_size * args.grad_accum
+        total_steps = math.ceil(len(train_dataset) / eff_bs) * args.epochs
+        ta_kwargs["warmup_steps"] = max(1, round(args.warmup_ratio * total_steps))
 
     training_args = TrainingArguments(**ta_kwargs)
 

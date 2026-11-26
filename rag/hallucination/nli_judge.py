@@ -69,6 +69,7 @@ def split_sentences(text: str) -> List[str]:
 
 QUESTION_MODES = ("none", "short", "always")
 SHORT_WORDS = 8
+DEFAULT_WINDOW_WORDS = 110
 
 
 def build_hypothesis(question: Optional[str], sentence: str, mode: str = "short") -> str:
@@ -173,33 +174,60 @@ def make_nli(name: str, model_id: str = DEFAULT_NLI_MODEL):
 # ---------------------------------------------------------------------------
 # Chấm
 # ---------------------------------------------------------------------------
-def sentence_scores(nli, hyps: List[str], chunk_texts: List[str], agg: str = "max") -> List[float]:
+def split_windows(text: str, size: int = 110, overlap: int = 40) -> List[str]:
+    """
+    Cắt một chunk dài thành các cửa sổ ~size từ (chồng nhau overlap từ).
+    Lý do: chunk theo Điều dài trung vị ~256 từ, tiếng Việt ~1,6-2 token/từ nên vượt 512 token của
+    mDeBERTa; phần cuối chunk bị cắt mất và câu trả lời nằm ở đó bị chấm "không có căn cứ" oan.
+    """
+    words = text.split()
+    if size <= 0 or len(words) <= size:
+        return [text]
+    step = max(1, size - overlap)
+    out, i = [], 0
+    while True:
+        out.append(" ".join(words[i:i + size]))
+        if i + size >= len(words):
+            return out
+        i += step
+
+
+def sentence_scores(nli, hyps: List[str], chunk_texts: List[str], agg: str = "max",
+                    window_words: int = 0) -> List[float]:
     if not hyps:
         return []
     if not chunk_texts:
         return [0.0] * len(hyps)          # closed-book: không có căn cứ trong ngữ cảnh
+    if window_words and agg in ("max", "both"):
+        windows = [w for c in chunk_texts for w in split_windows(c, window_words)]
+    else:
+        windows = chunk_texts
     if agg == "concat":
         premise = "\n".join(chunk_texts)
         return nli.entail_probs([(premise, h) for h in hyps])
     if agg == "max":
-        pairs = [(c, h) for h in hyps for c in chunk_texts]
+        pairs = [(c, h) for h in hyps for c in windows]
         probs = nli.entail_probs(pairs)
-        n = len(chunk_texts)
+        n = len(windows)
         return [max(probs[i * n:(i + 1) * n]) for i in range(len(hyps))]
     if agg == "both":
-        a = sentence_scores(nli, hyps, chunk_texts, "max")
+        a = sentence_scores(nli, hyps, chunk_texts, "max", window_words)
         b = sentence_scores(nli, hyps, chunk_texts, "concat")
         return [max(x, y) for x, y in zip(a, b)]
     raise ValueError("agg phải là 'max', 'concat' hoặc 'both'")
 
 
 def judge_answer(nli, answer: str, chunk_texts: List[str], tau: float = 0.5, agg: str = "max",
-                 question: Optional[str] = None, question_mode: str = "short") -> Dict:
+                 question: Optional[str] = None, question_mode: str = "short",
+                 window_words: int = DEFAULT_WINDOW_WORDS) -> Dict:
     if is_refusal(answer):
         return {"refusal": True, "sentences": [], "faithfulness": None, "supported": None}
-    sentences = split_sentences(answer)
+    # câu "Không tìm thấy thông tin…" nằm giữa câu trả lời không phải một khẳng định để kiểm chứng
+    sentences = [h for h in split_sentences(answer) if not is_refusal(h)]
+    if not sentences:
+        return {"refusal": True, "sentences": [], "faithfulness": None, "supported": None}
     hyps = [build_hypothesis(question, h, question_mode) for h in sentences]
-    probs = sentence_scores(nli, hyps, chunk_texts, agg)
+    probs = sentence_scores(nli, hyps, chunk_texts, agg, window_words)
     sents = [{"text": h, "p_entail": round(p, 4), "entailed": p >= tau} for h, p in zip(sentences, probs)]
     faith = sum(s["entailed"] for s in sents) / len(sents) if sents else 0.0
     return {"refusal": False, "sentences": sents, "faithfulness": round(faith, 4),
@@ -209,7 +237,8 @@ def judge_answer(nli, answer: str, chunk_texts: List[str], tau: float = 0.5, agg
 def judge_file(nli, gens: List[Dict], chunk_index: Dict[str, Dict], tau: float, agg: str,
                gold_map: Optional[Dict[str, List[str]]] = None,
                gold_configs: Sequence[str] = ("S0",),
-               questions: Optional[Dict[str, str]] = None, question_mode: str = "short") -> List[Dict]:
+               questions: Optional[Dict[str, str]] = None, question_mode: str = "short",
+               window_words: int = DEFAULT_WINDOW_WORDS) -> List[Dict]:
     """
     Chấm từng dòng sinh. Với cấu hình KHÔNG có ngữ cảnh (S0 closed-book) mọi câu đều "không có căn cứ"
     nếu premise rỗng, nên so S0 với S1..S4 bằng faithfulness là vô nghĩa. Khi truyền gold_map
@@ -229,9 +258,10 @@ def judge_file(nli, gens: List[Dict], chunk_index: Dict[str, Dict], tau: float, 
         texts = [chunk_index[c]["text"] for c in ids]
         out.append({"qid": g["qid"], "config": g["config"], "tau": tau, "agg": agg,
                     "nli_model": getattr(nli, "model_id", "?"), "premise_source": source,
-                    "question_mode": question_mode if questions else "none",
+                    "question_mode": question_mode if questions else "none", "window_words": window_words,
                     **judge_answer(nli, g["answer"], texts, tau, agg,
-                                   question=(questions or {}).get(str(g["qid"])), question_mode=question_mode)})
+                                   question=(questions or {}).get(str(g["qid"])), question_mode=question_mode,
+                                   window_words=window_words)})
     return out
 
 
@@ -373,6 +403,8 @@ def main(argv=None):
     for p in (j, c, e):
         p.add_argument("--backend", choices=["hf", "lexical"], default="hf")
         p.add_argument("--model", default=DEFAULT_NLI_MODEL)
+    j.add_argument("--window-words", type=int, default=DEFAULT_WINDOW_WORDS,
+                   help="cắt chunk thành cửa sổ ~N từ để không vượt 512 token (0 = không cắt)")
     j.add_argument("--tau", type=float, default=0.5)
     j.add_argument("--agg", choices=["max", "concat", "both"], default="max")
     a = ap.parse_args(argv)
@@ -394,7 +426,7 @@ def main(argv=None):
                 if tests else None)
     questions = {_qid(t): t["question"] for t in tests} or None
     judged = judge_file(nli, _read_jsonl(a.gen), chunk_index, a.tau, a.agg, gold_map=gold_map,
-                        questions=questions, question_mode=a.question_mode)
+                        questions=questions, question_mode=a.question_mode, window_words=a.window_words)
     with open(a.out, "w", encoding="utf-8") as f:
         for r in judged:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")

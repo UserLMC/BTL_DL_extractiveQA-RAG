@@ -112,6 +112,12 @@ def main():
             if not rel:
                 print(f"[LỖI] {q['id']}: câu có đáp án nhưng thiếu evidence")
                 n_err += 1
+            for k, r in enumerate(rel):
+                if not r:
+                    # đoạn trích có trong văn bản nhưng không chunk nào chứa nó:
+                    # kho bị mất nội dung (lỗi chia đoạn), câu này không retriever nào trả lời được
+                    print(f"[LỖI] {q['id']}: evidence {k + 1} không thuộc chunk nào trong kho")
+                    n_err += 1
             q["gold_chunks"] = sorted({chunks[i]["id"] for r in rel for i in r})
         if args.write:
             with open(path, "w", encoding="utf-8") as f:

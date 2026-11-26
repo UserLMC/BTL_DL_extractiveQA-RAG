@@ -42,6 +42,8 @@ def match_article(p):
 # Văn bản hướng dẫn không chia Điều mà chia mục "1. Nguyên tắc chung"
 SECTION_RE = re.compile(r"^(\d+)\.\s+(\S.*)$")
 TAIL_RE = re.compile(r"^(Nơi nhận|NƠI NHẬN)\b")
+# Sau chữ ký: dòng "(Ban hành kèm theo Quyết định ...)" mở đầu văn bản đính kèm
+ATTACH_RE = re.compile(r"ban hành kèm theo", re.IGNORECASE)
 
 
 def load_doc_text(doc_id):
@@ -104,6 +106,15 @@ def split_structure(doc_id, paras):
             blocks.append(cur)
             cur = {"kind": "tail", "start": start, "end": end}
             continue
+        if cur["kind"] == "tail" and ATTACH_RE.search(p):
+            # Văn bản đính kèm sau chữ ký. Thường ngay sau là "Chương I"/"Điều 1" (khối này
+            # bị bỏ như phần chữ ký). Nhưng văn bản sửa đổi (uet_dc2025) chỉ có nội dung
+            # "Điều 3, chương II: ..." — không phải đầu Điều — nên phải giữ lại, nếu không
+            # cả phần quy định mới bị mất khỏi kho.
+            blocks.append(cur)
+            cur = {"kind": "attachment", "part": part, "chapter": None, "chapter_title": None,
+                   "article": None, "article_title": None, "start": end + 1, "end": end + 1}
+            continue
         if m_ch:
             chapter, chapter_title = m_ch.group(2), m_ch.group(3).strip() or None
             pending_chapter_title = chapter_title is None
@@ -137,9 +148,15 @@ def split_structure(doc_id, paras):
             cur = {"kind": "appendix", "part": part, "chapter": None, "chapter_title": None,
                    "article": None, "article_title": p, "start": start, "end": end}
             continue
+        if cur["kind"] == "attachment":
+            # có nội dung thật trước đơn vị kế tiếp -> giữ như một phụ lục
+            cur["kind"] = "appendix"
+            cur["start"] = start
+            if len(p.split()) <= 20 and not p.endswith((".", ";")):
+                cur["article_title"] = p
         cur["end"] = end
     blocks.append(cur)
-    return [b for b in blocks if b["kind"] != "tail"]
+    return [b for b in blocks if b["kind"] not in ("tail", "attachment")]
 
 
 def chunk_by_article(src, max_words=300, overlap=50):

@@ -1,0 +1,59 @@
+{
+  "config": "S6",
+  "model_id": "xlmr_run2_lr5e5_ep3_len384",
+  "retriever": "dense",
+  "top_k": 3,
+  "null_thresh": 0.3477,
+  "scorer": "rag.generation.generate.score_row",
+  "total": 124,
+  "overall_token_f1": 37.73,
+  "answerable": {
+    "n": 92,
+    "token_f1": 20.42,
+    "contains_gold_rate": 2.17,
+    "false_refusal_rate": 50.0
+  },
+  "hit_miss": {
+    "hit": {
+      "n": 80,
+      "token_f1": 23.42,
+      "false_refusal_rate": 43.75
+    },
+    "miss": {
+      "n": 12,
+      "token_f1": 0.43,
+      "false_refusal_rate": 91.67
+    }
+  },
+  "out_of_corpus": {
+    "n": 32,
+    "refusal_accuracy": 87.5
+  },
+  "by_type": {
+    "condition": {
+      "n": 24,
+      "token_f1": 20.48,
+      "refusal_rate": 45.83
+    },
+    "fact": {
+      "n": 22,
+      "token_f1": 31.33,
+      "refusal_rate": 50.0
+    },
+    "multi": {
+      "n": 17,
+      "token_f1": 5.8,
+      "refusal_rate": 64.71
+    },
+    "number": {
+      "n": 29,
+      "token_f1": 20.67,
+      "refusal_rate": 44.83
+    },
+    "out_of_corpus": {
+      "n": 32,
+      "token_f1": 87.5,
+      "refusal_rate": 87.5
+    }
+  }
+}

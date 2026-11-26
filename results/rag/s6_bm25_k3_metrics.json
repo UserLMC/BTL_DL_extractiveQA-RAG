@@ -1,0 +1,59 @@
+{
+  "config": "S6_bm25",
+  "model_id": "xlmr_run2_lr5e5_ep3_len384",
+  "retriever": "bm25",
+  "top_k": 3,
+  "null_thresh": 0.3477,
+  "scorer": "rag.generation.generate.score_row",
+  "total": 124,
+  "overall_token_f1": 38.32,
+  "answerable": {
+    "n": 92,
+    "token_f1": 20.13,
+    "contains_gold_rate": 2.17,
+    "false_refusal_rate": 50.0
+  },
+  "hit_miss": {
+    "hit": {
+      "n": 84,
+      "token_f1": 22.05,
+      "false_refusal_rate": 45.24
+    },
+    "miss": {
+      "n": 8,
+      "token_f1": 0.0,
+      "false_refusal_rate": 100.0
+    }
+  },
+  "out_of_corpus": {
+    "n": 32,
+    "refusal_accuracy": 90.62
+  },
+  "by_type": {
+    "condition": {
+      "n": 24,
+      "token_f1": 20.48,
+      "refusal_rate": 45.83
+    },
+    "fact": {
+      "n": 22,
+      "token_f1": 35.7,
+      "refusal_rate": 40.91
+    },
+    "multi": {
+      "n": 17,
+      "token_f1": 5.91,
+      "refusal_rate": 64.71
+    },
+    "number": {
+      "n": 29,
+      "token_f1": 16.36,
+      "refusal_rate": 51.72
+    },
+    "out_of_corpus": {
+      "n": 32,
+      "token_f1": 90.62,
+      "refusal_rate": 90.62
+    }
+  }
+}

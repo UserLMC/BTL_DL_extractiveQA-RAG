@@ -1,0 +1,31 @@
+retriever,k,recall,n
+BM25,1,0.6993,92
+BM25,2,0.8243,92
+BM25,3,0.8678,92
+BM25,4,0.9058,92
+BM25,5,0.9167,92
+BM25,6,0.9384,92
+BM25,7,0.9529,92
+BM25,8,0.9674,92
+BM25,9,0.9674,92
+BM25,10,0.9674,92
+Dense e5-base,1,0.6775,92
+Dense e5-base,2,0.7808,92
+Dense e5-base,3,0.8188,92
+Dense e5-base,4,0.8297,92
+Dense e5-base,5,0.8460,92
+Dense e5-base,6,0.8569,92
+Dense e5-base,7,0.8841,92
+Dense e5-base,8,0.9221,92
+Dense e5-base,9,0.9330,92
+Dense e5-base,10,0.9330,92
+Dense bkai,1,0.5978,92
+Dense bkai,2,0.6793,92
+Dense bkai,3,0.7120,92
+Dense bkai,4,0.7935,92
+Dense bkai,5,0.8080,92
+Dense bkai,6,0.8460,92
+Dense bkai,7,0.8623,92
+Dense bkai,8,0.8732,92
+Dense bkai,9,0.8841,92
+Dense bkai,10,0.8895,92

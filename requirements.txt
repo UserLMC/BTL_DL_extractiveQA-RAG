@@ -14,3 +14,6 @@ opencv-python-headless>=4.10
 rank_bm25>=0.2.2
 pyvi>=0.1.1
 faiss-cpu>=1.8
+
+# Hình cho báo cáo
+matplotlib>=3.8

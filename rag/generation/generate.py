@@ -349,7 +349,8 @@ def summarize(rows: List[Dict], test: List[Dict]) -> Dict[str, Dict]:
     by_qid = {str(s["qid"]): s for s in test}
     agg: Dict[str, List[Dict]] = defaultdict(list)
     for r in rows:
-        agg[r["config"]].append({**score_row(r, by_qid[str(r["qid"])]), "hit": r.get("hit")})
+        agg[r["config"]].append({**score_row(r, by_qid[str(r["qid"])]), "hit": r.get("hit"),
+                                 "qtype": by_qid[str(r["qid"])].get("qtype", "?")})
     out = {}
     for cfg, items in sorted(agg.items()):
         inc = [x for x in items if x["in_corpus"]]
@@ -371,6 +372,9 @@ def summarize(rows: List[Dict], test: List[Dict]) -> Dict[str, Dict]:
             "bad_citation_rate": avg([x for x in items if not x["refused"]], "bad_citation"),
             "token_F1_hit": avg(hits, "token_f1"),
             "token_F1_miss": avg(miss, "token_f1"),
+            # F1 theo loại câu (chỉ câu trong kho): fact / number / condition / multi
+            "token_F1_by_type": {t: avg([x for x in inc if x["qtype"] == t], "token_f1")
+                                 for t in sorted({x["qtype"] for x in inc})},
         }
     return out
 

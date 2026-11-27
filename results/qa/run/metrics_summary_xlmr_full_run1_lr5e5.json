@@ -1,0 +1,61 @@
+{
+  "run_name": "xlmr_full_run1_lr5e5",
+  "tb_log_dir": "/content/drive/MyDrive/QA_RAG_Project/logs/xlmr_full_run1_lr5e5",
+  "config": {
+    "model_name": "xlm-roberta-base",
+    "train_file": "data/processed/train.jsonl",
+    "val_file": "data/processed/val.jsonl",
+    "test_file": "data/processed/test.jsonl",
+    "output_dir": "/content/drive/MyDrive/QA_RAG_Project/checkpoint/xlmr_full_run1_lr5e5",
+    "log_dir": "/content/drive/MyDrive/QA_RAG_Project/logs",
+    "run_name": "xlmr_full_run1_lr5e5",
+    "max_len": 384,
+    "stride": 128,
+    "lr": 5e-05,
+    "epochs": 2,
+    "batch_size": 16,
+    "grad_accum": 2,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "seed": 42,
+    "debug_fraction": 1.0,
+    "n_best_size": 20,
+    "max_answer_length": 50,
+    "logging_steps": 50,
+    "eval_only": false
+  },
+  "best_null_threshold": 0.37109375,
+  "val_metrics_thresh_0": {
+    "EM": 40.93,
+    "F1": 56.73,
+    "total": 1835,
+    "HasAns_EM": 41.83,
+    "HasAns_F1": 64.85,
+    "HasAns_total": 1260,
+    "NoAns_EM": 38.96,
+    "NoAns_F1": 38.96,
+    "NoAns_total": 575
+  },
+  "val_metrics_tuned": {
+    "EM": 40.44,
+    "F1": 57.6,
+    "total": 1835,
+    "HasAns_EM": 43.49,
+    "HasAns_F1": 68.49,
+    "HasAns_total": 1260,
+    "NoAns_EM": 33.74,
+    "NoAns_F1": 33.74,
+    "NoAns_total": 575
+  },
+  "test_metrics": {
+    "EM": 38.93,
+    "F1": 53.75,
+    "total": 5692,
+    "HasAns_EM": 43.51,
+    "HasAns_F1": 65.41,
+    "HasAns_total": 3852,
+    "NoAns_EM": 29.35,
+    "NoAns_F1": 29.35,
+    "NoAns_total": 1840
+  }
+}

@@ -39,6 +39,7 @@ from rag.generation.prompts import (
     answer_for_scoring,
     build_messages,
     extract_citations,
+    _fold,
     is_refusal,
     refusal_kind,
 )
@@ -324,6 +325,18 @@ def run_generation(
 # ---------------------------------------------------------------------------
 # Chấm tự động: token-F1, từ chối, trích dẫn
 # ---------------------------------------------------------------------------
+# Cụm từ chối đứng ở BẤT KỲ vị trí nào của câu (kể cả "Chủ đề ... không liên quan ... không có thông tin").
+# Chỉ là chỉ báo CẬN TRÊN: is_refusal() (đứng đầu câu, ngắn) mới là định nghĩa chính; câu trong kho có thể
+# chứa "không có thông tin ..." ở giữa câu mà vẫn trả lời thật. Dùng để đọc S5 (prompt không có lệnh từ chối).
+_ANY_REFUSAL_PHRASES = ("khong tim thay thong tin", "khong co thong tin", "khong de cap",
+                        "khong lien quan", "khong duoc cung cap")
+
+
+def refusal_anywhere(text: str) -> bool:
+    f = _fold(text or "")
+    return any(p in f for p in _ANY_REFUSAL_PHRASES)
+
+
 def score_row(row: Dict, sample: Dict) -> Dict:
     in_corpus = bool(sample.get("in_corpus", bool(sample.get("answer"))))
     gold = sample.get("answer", "") if in_corpus else ""
@@ -338,6 +351,7 @@ def score_row(row: Dict, sample: Dict) -> Dict:
         "partial_refusal": refusal_kind(ans) == "partial",
         "refused": refused,
         "refusal_strict": is_refusal(ans, strict=True),
+        "refusal_any": refusal_anywhere(ans),
         "in_corpus": in_corpus,
         # trích dẫn ngoài phạm vi [1..k] = chắc chắn sai (cờ "trích dẫn sai" cấp tự động)
         "bad_citation": any(c < 1 or c > row["k"] for c in cites) if row["k"] else bool(cites),
@@ -367,6 +381,9 @@ def summarize(rows: List[Dict], test: List[Dict]) -> Dict[str, Dict]:
             "partial_refusal_rate": avg(items, "partial_refusal"),
             "refusal_acc_out_of_corpus": avg(ooc, "refused"),      # từ chối đúng
             "false_refusal_in_corpus": avg(inc, "refused"),        # từ chối sai
+            # cận trên: có cụm từ chối ở bất kỳ vị trí nào (xem refusal_anywhere); S5 cần đọc cột này
+            "refusal_any_phrase_out_of_corpus": avg(ooc, "refusal_any"),
+            "refusal_any_phrase_in_corpus": avg(inc, "refusal_any"),
             "refusal_format_strict": avg([x for x in items if x["refused"]], "refusal_strict"),
             "citation_rate": avg([x for x in inc if not x["refused"]], "has_citation"),
             "bad_citation_rate": avg([x for x in items if not x["refused"]], "bad_citation"),

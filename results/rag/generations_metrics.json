@@ -1,0 +1,232 @@
+{
+  "file": "results/rag/generations.jsonl",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct (4-bit NF4, greedy)",
+  "scorer": "rag.generation.generate.score_row",
+  "total_per_config": 124,
+  "in_corpus": 92,
+  "out_of_corpus": 32,
+  "retrieval": "results/retrieval/retrieval_top10.jsonl (S1=bm25 top3; S2,S5=dense top3; S4=dense top5)",
+  "per_config": {
+    "S0": {
+      "n": 124,
+      "token_F1": 33.74,
+      "token_F1_in_corpus": 30.26,
+      "token_recall_in_corpus": 40.73,
+      "contains_gold_in_corpus": 1.09,
+      "partial_refusal_rate": 0.0,
+      "refusal_acc_out_of_corpus": 43.75,
+      "false_refusal_in_corpus": 13.04,
+      "refusal_format_strict": 100.0,
+      "citation_rate": 0.0,
+      "bad_citation_rate": 0.0,
+      "token_F1_hit": null,
+      "token_F1_miss": null,
+      "token_F1_by_type": {
+        "condition": 25.34,
+        "fact": 34.02,
+        "multi": 36.9,
+        "number": 27.57
+      }
+    },
+    "S1": {
+      "n": 124,
+      "token_F1": 61.6,
+      "token_F1_in_corpus": 50.42,
+      "token_recall_in_corpus": 69.05,
+      "contains_gold_in_corpus": 11.96,
+      "partial_refusal_rate": 0.0,
+      "refusal_acc_out_of_corpus": 93.75,
+      "false_refusal_in_corpus": 3.26,
+      "refusal_format_strict": 100.0,
+      "citation_rate": 88.76,
+      "bad_citation_rate": 2.2,
+      "token_F1_hit": 53.71,
+      "token_F1_miss": 15.88,
+      "token_F1_by_type": {
+        "condition": 56.72,
+        "fact": 54.17,
+        "multi": 51.37,
+        "number": 41.81
+      }
+    },
+    "S2": {
+      "n": 124,
+      "token_F1": 59.58,
+      "token_F1_in_corpus": 46.61,
+      "token_recall_in_corpus": 64.1,
+      "contains_gold_in_corpus": 9.78,
+      "partial_refusal_rate": 0.0,
+      "refusal_acc_out_of_corpus": 96.88,
+      "false_refusal_in_corpus": 10.87,
+      "refusal_format_strict": 100.0,
+      "citation_rate": 86.59,
+      "bad_citation_rate": 1.2,
+      "token_F1_hit": 52.65,
+      "token_F1_miss": 6.33,
+      "token_F1_by_type": {
+        "condition": 56.64,
+        "fact": 36.43,
+        "multi": 48.3,
+        "number": 45.03
+      }
+    },
+    "S3": {
+      "n": 124,
+      "token_F1": 54.62,
+      "token_F1_in_corpus": 56.23,
+      "token_recall_in_corpus": 75.67,
+      "contains_gold_in_corpus": 13.04,
+      "partial_refusal_rate": 0.0,
+      "refusal_acc_out_of_corpus": 50.0,
+      "false_refusal_in_corpus": 0.0,
+      "refusal_format_strict": 100.0,
+      "citation_rate": 93.48,
+      "bad_citation_rate": 20.37,
+      "token_F1_hit": 56.23,
+      "token_F1_miss": null,
+      "token_F1_by_type": {
+        "condition": 59.34,
+        "fact": 59.74,
+        "multi": 57.01,
+        "number": 50.53
+      }
+    },
+    "S4": {
+      "n": 124,
+      "token_F1": 59.33,
+      "token_F1_in_corpus": 46.27,
+      "token_recall_in_corpus": 63.83,
+      "contains_gold_in_corpus": 11.96,
+      "partial_refusal_rate": 0.0,
+      "refusal_acc_out_of_corpus": 96.88,
+      "false_refusal_in_corpus": 13.04,
+      "refusal_format_strict": 97.67,
+      "citation_rate": 88.75,
+      "bad_citation_rate": 0.0,
+      "token_F1_hit": 51.24,
+      "token_F1_miss": 5.47,
+      "token_F1_by_type": {
+        "condition": 58.06,
+        "fact": 33.24,
+        "multi": 47.74,
+        "number": 45.54
+      }
+    },
+    "S5": {
+      "n": 124,
+      "token_F1": 37.2,
+      "token_F1_in_corpus": 50.14,
+      "token_recall_in_corpus": 69.64,
+      "contains_gold_in_corpus": 10.87,
+      "partial_refusal_rate": 0.0,
+      "refusal_acc_out_of_corpus": 0.0,
+      "false_refusal_in_corpus": 0.0,
+      "refusal_format_strict": null,
+      "citation_rate": 0.0,
+      "bad_citation_rate": 0.0,
+      "token_F1_hit": 53.61,
+      "token_F1_miss": 26.97,
+      "token_F1_by_type": {
+        "condition": 57.7,
+        "fact": 45.23,
+        "multi": 53.43,
+        "number": 45.66
+      }
+    }
+  },
+  "token_F1_in_corpus_bootstrap95": {
+    "S0": [
+      26.6,
+      33.9
+    ],
+    "S1": [
+      46.1,
+      54.6
+    ],
+    "S2": [
+      41.5,
+      51.4
+    ],
+    "S3": [
+      52.7,
+      59.7
+    ],
+    "S4": [
+      41.1,
+      51.2
+    ],
+    "S5": [
+      46.2,
+      54.0
+    ]
+  },
+  "paired_diff_F1_in_corpus_bootstrap95": {
+    "S1-S2": {
+      "mean": 3.8,
+      "ci95": [
+        -0.7,
+        8.6
+      ]
+    },
+    "S1-S4": {
+      "mean": 4.2,
+      "ci95": [
+        -0.5,
+        9.0
+      ]
+    },
+    "S5-S2": {
+      "mean": 3.5,
+      "ci95": [
+        0.7,
+        6.7
+      ]
+    },
+    "S3-S1": {
+      "mean": 5.8,
+      "ci95": [
+        3.1,
+        8.9
+      ]
+    },
+    "S1-S0": {
+      "mean": 20.2,
+      "ci95": [
+        16.0,
+        24.4
+      ]
+    }
+  },
+  "bootstrap": {
+    "unit": "câu hỏi trong kho",
+    "n_resamples": 4000,
+    "seed": 20261127
+  },
+  "answer_style_in_corpus": {
+    "S1": {
+      "n": 89,
+      "bat_dau_chu_thuong": 3,
+      "thieu_dau_cham_cuoi": 2,
+      "duoi_6_tu": 0
+    },
+    "S2": {
+      "n": 82,
+      "bat_dau_chu_thuong": 1,
+      "thieu_dau_cham_cuoi": 1,
+      "duoi_6_tu": 0
+    },
+    "S4": {
+      "n": 80,
+      "bat_dau_chu_thuong": 2,
+      "thieu_dau_cham_cuoi": 2,
+      "duoi_6_tu": 0
+    },
+    "S5": {
+      "n": 92,
+      "bat_dau_chu_thuong": 3,
+      "thieu_dau_cham_cuoi": 1,
+      "duoi_6_tu": 0
+    }
+  },
+  "note": "Bộ nháp 124 câu, 1 lần chạy greedy; token-F1 phạt cách diễn đạt khác nên chỉ dùng để so cấu hình. S3 trên câu ngoài kho có ngữ cảnh rỗng."
+}
